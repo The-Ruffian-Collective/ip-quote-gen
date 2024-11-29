@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indie Paving - Quote Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Indie Paving</h1>
+            <p>Professional Paving & Landscaping Services</p>
+        </header>
+
+        <div class="quote-form">
+            <h2>Project Quote Calculator</h2>
+            
+            <form id="quoteForm">
+                <div class="form-section">
+                    <h3>Client Information</h3>
+                    <div class="form-group">
+                        <label for="clientName">Name:</label>
+                        <input type="text" id="clientName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clientEmail">Email:</label>
+                        <input type="email" id="clientEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clientPhone">Phone:</label>
+                        <input type="tel" id="clientPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectAddress">Project Address:</label>
+                        <textarea id="projectAddress" required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Project Details</h3>
+                    <div class="form-group">
+                        <label for="serviceType">Service Type:</label>
+                        <select id="serviceType" required>
+                            <option value="">Select a service...</option>
+                            <option value="driveway">Driveway Paving</option>
+                            <option value="patio">Patio Installation</option>
+                            <option value="walkway">Walkway Construction</option>
+                            <option value="landscaping">Landscaping</option>
+                            <option value="repair">Repair/Maintenance</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="areaSize">Area Size (square meters):</label>
+                        <input type="number" id="areaSize" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="materialType">Material Type:</label>
+                        <select id="materialType" required>
+                            <option value="">Select material...</option>
+                            <option value="asphalt">Asphalt</option>
+                            <option value="concrete">Concrete</option>
+                            <option value="pavers">Pavers</option>
+                            <option value="gravel">Gravel</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="additionalServices">Additional Services:</label>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="additionalServices" value="drainage"> Drainage System
+                            </label>
+                            <label>
+                                <input type="checkbox" name="additionalServices" value="edging"> Edging
+                            </label>
+                            <label>
+                                <input type="checkbox" name="additionalServices" value="lighting"> Lighting
+                            </label>
+                            <label>
+                                <input type="checkbox" name="additionalServices" value="sealing"> Sealing
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectNotes">Additional Notes:</label>
+                        <textarea id="projectNotes"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="generate-quote">Generate Quote</button>
+            </form>
+        </div>
+
+        <div id="quoteResult" class="quote-result hidden">
+            <h2>Project Quote</h2>
+            <div class="quote-details"></div>
+            <div class="quote-actions">
+                <button id="saveQuote" class="action-button">Save Quote (PDF)</button>
+                <button id="emailQuote" class="action-button">Email Quote</button>
+                <button id="newQuote" class="action-button">New Quote</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
